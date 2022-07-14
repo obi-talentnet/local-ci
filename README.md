@@ -1,6 +1,6 @@
 # local-ci
 
-## js usage
+## JavaScript(reactJs/nodeJs) application usage
 
 To add the CI to your local project kindly add the below to your `package.json` file
 
