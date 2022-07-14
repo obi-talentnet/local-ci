@@ -1,16 +1,23 @@
-# local-ci
+# local ci
 
-## js usage
+This adds the local ci to your projects
 
-To add the CI to your local project kindly add the below to your `package.json` file
+### JavaScript(reactJs/nodeJs) application usage
+
+To add the CI to your local project kindly add the below to your `package.json` file in the script section.
 
 ```js
-this;
+
+        "fetch-ci": "bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setupJs/local-ci.sh)"
 ```
 
-## php usage
+### php usage
 
-curl -s https://raw.github.com/obi-talentnet/local-ci/blob/main/local-ci.sh | bash -s --
+```php
 
-bash <(curl -s https://raw.github.com/obi-talentnet/local-ci/blob/main/local-ci.sh)
+        " ": "bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setup/local-ci.sh)"
+```
+
+..................
+bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setupJs/local-ci.sh)
 
