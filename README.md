@@ -10,7 +10,6 @@ this;
 
 ## php usage
 
-curl -s https://raw.github.com/obi-talentnet/local-ci/blob/main/local-ci.sh | bash -s --
-
-bash <(curl -s https://raw.github.com/obi-talentnet/local-ci/blob/main/local-ci.sh)
+bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setup/local-ci.sh)
+bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setupJs/local-ci.sh)
 
