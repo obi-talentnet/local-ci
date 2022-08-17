@@ -6,4 +6,19 @@
 # it wants to stop the commit.
 #
 # To enable this hook, rename this file to "pre-commit".
-echo 'php'
+echo 'php'  
+
+#!/bin/bash 
+# [linter, pre-production build runner]
+
+files=$(git diff HEAD --name-only --relative --diff-filter=AMCR)
+
+if [ -t 1 ]; then
+  exec < /dev/tty
+fi
+ 
+echo
+echo  "Running: code linters and unit tests..." 
+./vendor/bin/phpcs "$files" 
+echo
+echo  "Running: phpunit tests and phpstan..."  
