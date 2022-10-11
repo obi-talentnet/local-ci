@@ -7,16 +7,13 @@ This adds the local ci to your projects
 To add the CI to your local project kindly add the below to your `package.json` file in the script section.
 
 ```js
- "fetch-ci": "bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setupJs/local-ci.sh)"
+ "fetch-ci": "wget https://raw.githubusercontent.com/obi-talentnet/local-ci/main/local-ci.sh"
 ```
 
 ### php usage
 
 ```php
 
-"fetch-ci": "bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setup/local-ci.sh)"
+"fetch-ci": "wget https://raw.githubusercontent.com/obi-talentnet/local-ci/main/local-ci.sh"
 ```
-
-..................
-bash <(curl -s https://raw.githubusercontent.com/obi-talentnet/local-ci/setupJs/local-ci.sh)
 

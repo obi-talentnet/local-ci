@@ -1,17 +1,5 @@
-#!/bin/sh
-#
-# An example hook script to verify what is about to be committed.
-# Called by "git commit" with no arguments.  The hook should
-# exit with non-zero status after issuing an appropriate message if
-# it wants to stop the commit.
-#
-# To enable this hook, rename this file to "pre-commit".
-echo 'js'
-# npx prettier --check src/
-
-
 #!/bin/bash 
-# [linter, pre-production build runner]
+# [linter, test runner]
 
 files=$(git diff HEAD --name-only --relative --diff-filter=AMCR)
 
@@ -19,17 +7,18 @@ if [ -t 1 ]; then
   exec < /dev/tty
 fi
 
-# read -p 'Do you want to run prettier  (Y/n)? ' -n 1 -r
-# if [[ "$REPLY" =~ ^[Nn]$ ]]; then
-#     echo
-#     echo  "Skipping: prettier..." 
-# else 
-#     echo
-#     echo  "Running: prettier..." 
-#     npx prettier --check "$files"
-# fi
+read -p 'Do you want to lint your code (Y/n)? ' -n 1 -r
+if [[ "$REPLY" =~ ^[Nn]$ ]]; then
+    echo
+    echo  "Skipping: Code linter..." 
+else 
+    echo
+    echo  "Running: Code linter..." 
+    npx prettier --check "$files"
+fi
 
+
+echo  "Running: Unit tests..."  
+npm test -- --watchAll=false 
 echo
-echo  "Running: code linters..."  
-npx prettier --check "$files" 
-echo  
+ 
