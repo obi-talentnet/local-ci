@@ -1,6 +1,6 @@
 # local ci
 
-This adds the local ci to your projects
+This adds the local ci to our applications.
 
 ### JavaScript(reactJs/nodeJs) application usage
 
