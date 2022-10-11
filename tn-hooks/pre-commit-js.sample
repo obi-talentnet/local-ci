@@ -1,10 +1,16 @@
 #!/bin/bash 
 # [linter, test runner]
 
+branch=$(git rev-parse --abbrev-ref HEAD)
+commit=$(git log --format=%B -n 1 $(git log -1 --pretty=format:"%h") | cat -)
 files=$(git diff HEAD --name-only --relative --diff-filter=AMCR)
 
 if [ -t 1 ]; then
   exec < /dev/tty
+fi 
+
+if [[ "$commit" != *"$branch"* ]]; then
+  echo "Your commit doesnt contain the branch name, kindly fix this, thanks!"
 fi
 
 read -p 'Do you want to lint your code (Y/n)? ' -n 1 -r
