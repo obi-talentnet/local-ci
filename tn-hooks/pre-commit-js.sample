@@ -9,7 +9,7 @@ if [ -t 1 ]; then
   exec < /dev/tty
 fi 
 
-if [[ "$commit" != *"$branch"* ]]; then
+if [[ "$commit" =~ *"$branch"* ]]; then
   echo "Your commit doesnt contain the branch name, kindly fix this, thanks!"
 fi
 
