@@ -14,3 +14,5 @@ Type `sh local-ci.sh` in your terminal after running `npm run fetch-ci`. FYI thi
 you are free to use or fork this repo at will.
 NB: php setup: WIP
 
+
+Original code moved to https://github.com/TalentNet/repeller
